@@ -10,7 +10,7 @@ RUN apt-get update \
 RUN sed -i 's/^#FilterDefaultDeny .*/FilterDefaultDeny yes/' /etc/tinyproxy.conf \
     && sed -i 's|^#Filter .*|Filter "/etc/filter"|' /etc/tinyproxy.conf \ 
     && sed -i 's|^Allow 127.0.0.1|#Allow 127.0.0.1|' /etc/tinyproxy.conf \ 
-    && echo "github.com\namazonaws.com\nquay.io\ngcr.io\ncloud.google.com\n" > /etc/filter
+    && echo "github.com\namazonaws.com\nquay.io\ngcr.io\ncloud.google.com\nwordpress.org\n" > /etc/filter
 
 ENTRYPOINT ["tinyproxy"]
 CMD ["-d"]
